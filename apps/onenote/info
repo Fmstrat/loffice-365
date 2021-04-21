@@ -1,0 +1,14 @@
+# GNOME shortcut name
+NAME="OneNote"
+
+# Used for descriptions and window class
+FULL_NAME="Microsoft OneNote"
+
+# GNOME categories
+CATEGORIES="Office"
+
+# GNOME mimetypes
+MIME_TYPES="application/msonenote;"
+
+# Office 365 URL
+URL="https://www.office.com/launch/onenote"

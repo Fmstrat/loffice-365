@@ -1,0 +1,14 @@
+# GNOME shortcut name
+NAME="Office"
+
+# Used for descriptions and window class
+FULL_NAME="Microsoft Office 365"
+
+# GNOME categories
+CATEGORIES="Office"
+
+# GNOME mimetypes
+MIME_TYPES=""
+
+# Office 365 URL
+URL="https://www.office.com"
