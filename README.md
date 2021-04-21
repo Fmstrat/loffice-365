@@ -2,7 +2,7 @@
 
 An electron wrapped Office 365 application integrated into your file manager as if it was a native application.
 
-<img src="screenshots/loffice-365.gif" width=700>
+<img src="screenshots/loffice-365.gif">
 
 ## How it works
 - When opening a file on your local system, it is symlinked to a temporary OneDrive folder
