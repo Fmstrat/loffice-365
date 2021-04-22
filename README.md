@@ -4,6 +4,23 @@ An electron wrapped Office 365 application integrated into your file manager as 
 
 <img src="screenshots/loffice-365.gif">
 
+## Supported applications
+
+<table cellpadding="10" cellspacing="0" border="0">
+  <tr>
+    <td><img src="apps/excel/icon.svg" width="100"></td><td>Microsoft Excel 365</td>
+    <td><img src="apps/onenote/icon.svg" width="100"></td><td>Microsoft OneNote 365</td>
+  </tr>
+  <tr>
+    <td><img src="apps/outlook/icon.svg" width="100"></td><td>Microsoft Outlook 365</td>
+    <td><img src="apps/powerpoint/icon.svg" width="100"></td><td>Microsoft PowerPoint 365</td>
+  </tr>
+  <tr>
+    <td><img src="apps/project/icon.svg" width="100"></td><td>Microsoft Project 365</td>
+    <td><img src="apps/word/icon.svg" width="100"></td><td>Microsoft Word 365</td>
+  </tr>
+</table>
+
 ## How it works
 - When opening a file on your local system, it is symlinked to a temporary OneDrive folder
 - The [onedrive](https://github.com/abraunegg/onedrive) application is then used to synchroize that folder to OneDrive
