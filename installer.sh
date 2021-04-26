@@ -30,7 +30,7 @@ fi
 
 # Create the sync folder
 if [ ! -d ~/OneDrive/Loffice365 ]; then
-	mkdir ~/OneDrive/Loffice365
+	mkdir -p ~/OneDrive/Loffice365
 fi
 onedrive --create-directory Loffice365
 
