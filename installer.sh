@@ -29,10 +29,10 @@ onedrive"
 fi
 
 # Create the sync folder
+onedrive --create-directory Loffice365
 if [ ! -d ~/OneDrive/Loffice365 ]; then
 	mkdir ~/OneDrive/Loffice365
 fi
-onedrive --create-directory Loffice365
 
 BIN_PATH="${HOME}/.local/bin"
 APP_PATH="${HOME}/.local/share/applications"
