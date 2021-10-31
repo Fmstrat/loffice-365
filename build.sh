@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# Install docker
+if [ -z "$(which docker)" ]; then
+	echo "This application requires docker. Install it with:
+
+sudo apt install docker.io
+
+You may need to add yourself to the docker group and reboot:
+
+sudo groupadd docker
+sudo usermod -aG docker \$USER"
+	exit
+fi
+
 if [ "$1" == "image" ]; then
 	cd /tmp
 	#git clone https://github.com/jiahaog/nativefier.git
