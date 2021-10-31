@@ -37,6 +37,7 @@ fi
 BIN_PATH="${HOME}/.local/bin"
 APP_PATH="${HOME}/.local/share/applications"
 SYS_PATH="${HOME}/.local/share/loffice-365"
+ARCHIVE_PATH=$(readlink -f "$1")
 
 # Download app
 rm -rf "${SYS_PATH}"
@@ -44,10 +45,17 @@ mkdir -p "${HOME}/.local/share/"
 mkdir -p "${BIN_PATH}"
 mkdir -p "${APP_PATH}"
 cd "${HOME}/.local/share/"
-ARCHIVE=$(curl https://api.github.com/repos/Fmstrat/loffice-365/releases |grep browser_download_url |head -n1 |sed 's/"browser_download_url": "//g;s/"//g;s/ //g')
-curl -L "${ARCHIVE}" --output loffice-365.tgz
-tar xfz loffice-365.tgz
-rm -f loffice-365.tgz
+if [ -z "$1" ]; then
+	# Download latest release from Fmstrat/loffice-365
+	ARCHIVE=$(curl https://api.github.com/repos/Fmstrat/loffice-365/releases |grep browser_download_url |head -n1 |sed 's/"browser_download_url": "//g;s/"//g;s/ //g')
+	curl -L "${ARCHIVE}" --output loffice-365.tgz
+	tar xfz loffice-365.tgz
+	rm -f loffice-365.tgz
+else
+	# Use local loffice-365.tgz
+	mkdir loffice-365
+	tar xfz ${ARCHIVE_PATH} -C loffice-365 --strip-components=1
+fi
 cd loffice-365
 
 function configureApp() {
