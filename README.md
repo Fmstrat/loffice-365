@@ -68,6 +68,11 @@ Run the build:
 ./build.sh
 ```
 
+After that, setup onedrive as above then run the installer for Loffice 365 using the archive you just built:
+``` bash
+./installer.sh binaries/loffice-365.tgz
+```
+
 ## Icon licenses
 - Fluent UI React - Icons under [MIT License](https://github.com/Fmstrat/fluent-ui-react/blob/master/LICENSE.md) 
 - Fluent UI - Icons under [MIT License](https://github.com/Fmstrat/fluentui/blob/master/LICENSE) with [restricted use](https://static2.sharepointonline.com/files/fabric/assets/microsoft_fabric_assets_license_agreement_nov_2019.pdf)
