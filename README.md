@@ -76,4 +76,6 @@ After that, setup onedrive as above then run the installer for Loffice 365 using
 ## Icon licenses
 - Fluent UI React - Icons under [MIT License](https://github.com/Fmstrat/fluent-ui-react/blob/master/LICENSE.md)
 - Fluent UI - Icons under [MIT License](https://github.com/Fmstrat/fluentui/blob/master/LICENSE) with [restricted use](https://static2.sharepointonline.com/files/fabric/assets/microsoft_fabric_assets_license_agreement_nov_2019.pdf)
-- New app icons made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/), except for the OneNote and Project icons which were made by Adil based on the other Pixel perfect icons.
+- New app icons made by [Pixel perfect](https://www.flaticon.com/authors/pixel-perfect) from [www.flaticon.com](https://www.flaticon.com/), exceptions
+  - the Outlook icon was modified to have a white background
+  - the OneNote and Project icons which were made by Adil based on the other Pixel perfect icons.
