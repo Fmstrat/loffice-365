@@ -68,9 +68,9 @@ Run the build:
 ./build.sh
 ```
 
-After that, setup onedrive as above then run the installer for Loffice 365 using the archive you just built:
+After that, setup onedrive as above then run the installer for Loffice 365 using the archive you just built at binaries/loffice-365.tgz:
 ``` bash
-./installer.sh binaries/loffice-365.tgz
+./installer.sh
 ```
 
 ## Icon licenses

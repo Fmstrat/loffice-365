@@ -37,7 +37,10 @@ fi
 BIN_PATH="${HOME}/.local/bin"
 APP_PATH="${HOME}/.local/share/applications"
 SYS_PATH="${HOME}/.local/share/loffice-365"
-ARCHIVE_PATH=$(readlink -f "$1")
+if [ -n "$1" ]; then
+	ARCHIVE_PATH=$(readlink -f "$1")
+fi
+DEFAULT_ARCHIVE_PATH=$(readlink -f "binaries/loffice-365.tgz")
 
 # Download app
 rm -rf "${SYS_PATH}"
@@ -45,16 +48,23 @@ mkdir -p "${HOME}/.local/share/"
 mkdir -p "${BIN_PATH}"
 mkdir -p "${APP_PATH}"
 cd "${HOME}/.local/share/"
-if [ -z "$1" ]; then
+if [ -n "$1" ]; then
+	# Use specified local loffice-365.tgz
+	echo "Using ${ARCHIVE_PATH}"
+	mkdir loffice-365
+	tar xfz ${ARCHIVE_PATH} -C loffice-365 --strip-components=1
+elif [ -f ${DEFAULT_ARCHIVE_PATH} ]; then
+	# Use default location of built loffice-365.tgz
+	echo "Using ${DEFAULT_ARCHIVE_PATH}"
+	mkdir loffice-365
+	tar xfz ${DEFAULT_ARCHIVE_PATH} -C loffice-365 --strip-components=1
+else
 	# Download latest release from Fmstrat/loffice-365
+	echo "Downloading latest release from Fmstrat/loffice-365"
 	ARCHIVE=$(curl https://api.github.com/repos/Fmstrat/loffice-365/releases |grep browser_download_url |head -n1 |sed 's/"browser_download_url": "//g;s/"//g;s/ //g')
 	curl -L "${ARCHIVE}" --output loffice-365.tgz
 	tar xfz loffice-365.tgz
 	rm -f loffice-365.tgz
-else
-	# Use local loffice-365.tgz
-	mkdir loffice-365
-	tar xfz ${ARCHIVE_PATH} -C loffice-365 --strip-components=1
 fi
 cd loffice-365
 
